@@ -24,7 +24,7 @@ export default function StatsBar() {
   const stats = [
     { value: 10, suffix: '+', label: 'Hours saved', subLabel: 'per client' },
     { value: 200, suffix: '+', label: 'Tasks automated', subLabel: 'per month' },
-    { value: 24, prefix: '< ', suffix: 'h', label: 'Setup to live', subLabel: 'on most builds' },
+    { value: 24, suffix: 'h', label: 'Setup to live, under 24h on most builds', subLabel: '' },
     { value: 100, suffix: '%', label: 'Done for you', subLabel: '' },
   ];
 
@@ -35,14 +35,17 @@ export default function StatsBar() {
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-center lg:items-start">
               <div className="font-display font-extrabold text-[clamp(40px,6vw,72px)] leading-none text-amber mb-4">
-                {stat.prefix}
                 {hasAnimated ? <CountUp end={stat.value} duration={2} /> : '0'}
                 {stat.suffix}
               </div>
               <div className="font-sans text-[14px] leading-tight text-text-2 font-medium">
                 {stat.label}
-                <br />
-                {stat.subLabel}
+                {stat.subLabel && (
+                  <>
+                    <br />
+                    {stat.subLabel}
+                  </>
+                )}
               </div>
             </div>
           ))}

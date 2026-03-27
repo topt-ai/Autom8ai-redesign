@@ -37,14 +37,28 @@ export default function LiveSystems() {
       title: 'Real Estate Lead Qualifier',
       body: 'An AI that qualifies incoming leads, asks the right questions, and books showings automatically. No agent needed until the lead is ready.',
       stats: ['< 2 min response', '24/7 active', 'CRM integrated'],
-      mockup: <RealEstateMockup />,
+      mockup: <div className="w-full h-full flex rounded-xl border border-border-color overflow-hidden shadow-2xl relative"><img src="/real estate lead qual.png" alt="Real Estate Qualifier" className="w-full h-full object-cover object-top" /></div>,
     },
     {
       tag: 'LEAD & CLIENT SYSTEMS',
-      title: 'Smile Preview & Booking Bot',
-      body: 'Patients upload a selfie, get an AI-generated smile preview, and book a consultation — all without calling the clinic.',
-      stats: ['AI-generated previews', 'WhatsApp booking', 'Zero staff needed'],
-      mockup: <DentalMockup />,
+      title: 'Smile Preview',
+      body: 'Patients upload a selfie, get an AI-generated smile preview.',
+      stats: ['AI-generated previews', 'Active 24/7', 'Zero staff needed'],
+      mockup: <div className="w-full h-full flex rounded-xl border border-border-color overflow-hidden shadow-2xl relative"><img src="/selfie preview.png" alt="Smile preview" className="w-full h-full object-cover object-top" /></div>,
+    },
+    {
+      tag: 'WEB SYSTEMS',
+      title: 'Clean Website',
+      body: 'Clean website for local HVAC business.',
+      stats: ['Fast loading', 'SEO optimized', 'High conversion'],
+      mockup: <div className="w-full h-full flex rounded-xl border border-border-color overflow-hidden shadow-2xl relative"><img src="/arcticedge.png" alt="Arctic Edge" className="w-full h-full object-cover object-top" /></div>,
+    },
+    {
+      tag: 'WEB SYSTEMS',
+      title: 'VOID agency',
+      body: 'Clean website for a performance marketing agency.',
+      stats: ['Performance focused', 'Modern design', 'Lead generation'],
+      mockup: <div className="w-full h-full flex rounded-xl border border-border-color overflow-hidden shadow-2xl relative"><img src="/VOID2.png" alt="VOID Agency" className="w-full h-full object-cover object-top" /></div>,
     },
   ];
 
@@ -104,7 +118,7 @@ export default function LiveSystems() {
               </div>
 
               {/* Mockup Area */}
-              <div className="bg-surface-2 border-t border-border-color p-6 h-[240px] flex items-center justify-center relative overflow-hidden">
+              <div className="bg-surface-2 border-t border-border-color p-6 flex items-center justify-center relative overflow-hidden aspect-video">
                 {system.mockup}
               </div>
             </div>

@@ -2,19 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ArrowRight, Check, Loader2, Mail, MessageSquare, UserPlus } from 'lucide-react';
 
-const ROTATING_WORDS = ['business.', 'operations.', 'growth.', 'future.'];
-
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const wordRef = useRef<HTMLSpanElement>(null);
-  const [wordIndex, setWordIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setWordIndex((prev) => (prev + 1) % ROTATING_WORDS.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -30,19 +19,6 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (wordRef.current) {
-        gsap.fromTo(
-          wordRef.current,
-          { opacity: 0, y: 10 },
-          { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }
-        );
-      }
-    });
-    return () => ctx.revert();
-  }, [wordIndex]);
-
   return (
     <section ref={sectionRef} className="relative min-h-[100dvh] flex items-center pt-20 overflow-hidden">
       {/* Radial Glow */}
@@ -53,21 +29,21 @@ export default function Hero() {
         }}
       />
 
-      <div className="content-width w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-end pb-20 relative z-10">
+      <div className="content-width w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pb-20 relative z-10">
         {/* Left Copy Stack */}
         <div className="lg:col-span-7 flex flex-col items-start animate-fade-up">
           <span className="text-text-3 uppercase text-[12px] tracking-[0.1em] font-medium mb-6">
             AI Automation Agency
           </span>
 
-          <h1 className="font-display font-extrabold text-[clamp(52px,8vw,96px)] leading-[0.92] tracking-[-0.04em] text-text-1 mb-6">
+          <h1 className="font-display font-extrabold text-[clamp(44px,6vw,72px)] leading-[0.92] tracking-[-0.04em] text-text-1 mb-6">
             We build the systems.<br />
-            You run the <span ref={wordRef} className="text-signal inline-block">{ROTATING_WORDS[wordIndex]}</span>
+            You run the <span className="text-signal inline-block">business.</span>
           </h1>
 
           <p className="font-sans text-[18px] leading-[1.7] text-text-2 max-w-[520px] mb-10">
             Done-for-you AI automations that cut busy work, qualify leads,
-            and keep your business running — without you babysitting it.
+            and keep your business running, without you babysitting it.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-6 mb-8 w-full sm:w-auto">
@@ -91,7 +67,7 @@ export default function Hero() {
         </div>
 
         {/* Right Automation Preview Widget */}
-        <div className="lg:col-span-5 w-full max-w-[480px] mx-auto lg:mx-0 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+        <div className="lg:col-span-5 w-full max-w-[480px] mx-auto lg:mx-0 flex flex-col lg:justify-center lg:items-center lg:self-stretch animate-fade-up" style={{ animationDelay: '0.2s' }}>
           <AutomationWidget />
         </div>
       </div>

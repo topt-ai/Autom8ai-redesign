@@ -57,7 +57,7 @@ export default function HowItWorks() {
     {
       num: '02',
       title: 'MAP',
-      body: 'We build a custom automation plan for your business and send it to you — free.',
+      body: 'We build a custom automation plan for your business and send it to you, free.',
     },
     {
       num: '03',

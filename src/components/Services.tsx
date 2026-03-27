@@ -35,12 +35,12 @@ export default function Services() {
     {
       icon: Activity,
       title: 'Automate what slows you down.',
-      body: 'We map your repetitive processes — approvals, data entry, follow-ups, notifications — and build automations that run them without you.',
+      body: 'We map your repetitive processes (approvals, data entry, follow-ups, notifications) and build automations that run them without you.',
       tags: ['Internal Ops', 'Data Routing', 'Notifications', 'Approvals'],
     },
     {
       icon: Filter,
-      title: 'Capture, qualify, and close — automatically.',
+      title: 'Capture, qualify, and close, automatically.',
       body: 'AI chatbots, voice assistants, and smart follow-up sequences that turn inquiries into booked meetings while you focus on other things.',
       tags: ['AI Chatbots', 'Voice Assistants', 'Lead Qualification', 'Auto Follow-Up'],
     },

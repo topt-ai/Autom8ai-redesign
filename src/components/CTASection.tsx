@@ -43,7 +43,7 @@ export default function CTASection() {
           Let's map out your first automation.
         </h2>
         <p className="font-sans text-[18px] leading-[1.7] text-text-2 max-w-2xl mx-auto mb-12">
-          No pressure. No pitch deck. Just a conversation about where AI fits in your business — and what it would take to build it.
+          No pressure. No pitch deck. Just a conversation about where AI fits in your business, and what it would take to build it.
         </p>
 
         <div className="w-full h-[600px] max-w-[1000px] bg-void border border-border-color rounded-xl overflow-hidden shadow-2xl">
